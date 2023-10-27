@@ -1,0 +1,105 @@
+// .food-layout {
+//   display: grid;
+//   grid-template-columns: 30rem repeat(2, 1fr) 30rem;
+//   // grid-template-rows: repeat(2, 0.5fr) repeat(2, 0.25fr) repeat(4, 0.5fr) 0.1fr;
+//   grid-template-rows: repeat(auto-fit, minmax(30rem, 1fr)) 0.1fr;
+//   grid-column-gap: 0px;
+//   grid-row-gap: 0px;
+
+//   width: 100%;
+
+//   @media only screen and (max-width: $bp-largest) {
+//     grid-template-columns: 20rem repeat(2, 1fr) 20rem;
+//   }
+
+//   // @media only screen and (max-width: $bp-large) {
+//   //   grid-template-rows: repeat(2, 0.5fr) repeat(2, 0.15fr) repeat(4, 0.5fr) 0.1fr;
+//   // }
+
+//   @media only screen and (max-width: $bp-medium) {
+//     grid-template-columns: 10rem repeat(2, 1fr) 10rem;
+//     // grid-template-rows: repeat(6, 2fr);
+//     grid-template-rows: repeat(auto-fit, minmax(max-content, min-content)) 0.1fr;
+//   }
+
+//   &__menu {
+//     grid-area: 1 / 2 / 3 / 4;
+//     padding-bottom: 2.4rem;
+//   }
+
+//   &__additional {
+//     grid-area: 3 / 2 / 4 / 4;
+//   }
+
+//   &__diet {
+//     grid-area: 4 / 2 / 5 / 4;
+//   }
+
+//   &__information {
+//     grid-area: 5 / 2 / auto / 4;
+//   }
+// }
+
+.food-layout__wrapper {
+  @media only screen and (max-width: $bp-small-medium) {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 10rem 1fr 10rem;
+
+    margin-bottom: 10rem;
+  }
+}
+
+.food-layout {
+  display: grid;
+  grid-template-columns: 30rem repeat(2, 1fr) 30rem;
+  grid-template-rows: 1fr auto repeat(2, auto) repeat(5, auto);
+  gap: 0px 0px;
+  grid-auto-flow: row dense;
+  grid-template-areas:
+    ". food-layout__menu food-layout__menu ."
+    ". food-layout__menu food-layout__menu ."
+    ". food-layout__additional food-layout__additional ."
+    ". food-layout__diet food-layout__diet ."
+    ". food-layout__information food-layout__information ."
+    ". food-layout__information food-layout__information ."
+    ". food-layout__information food-layout__information ."
+    ". food-layout__information food-layout__information ."
+    ". . . .";
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-columns: 20rem repeat(2, 1fr) 20rem;
+  }
+
+  @media only screen and (max-width: $bp-small-medium) {
+    grid-template-rows: 1fr auto repeat(2, auto) repeat(5, auto);
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 10rem repeat(2, 1fr) 10rem;
+  }
+
+  @media only screen and (max-width: $bp-small-medium) {
+    grid-area: 1 / 2 / 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__menu {
+    grid-area: food-layout__menu;
+  }
+
+  &__additional {
+    grid-area: food-layout__additional;
+  }
+
+  &__diet {
+    grid-area: food-layout__diet;
+  }
+
+  &__information {
+    grid-area: food-layout__information;
+  }
+}

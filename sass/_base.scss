@@ -1,0 +1,98 @@
+$bp-biggest: 120em; // 1920px
+$bp-bigger: 100em; // 1600px
+$bp-largest: 80em; // 1280px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+$bp-mobile: 25em; //400px
+$bp-iphone-se: 23.5em; //400px
+
+:root {
+  font-size: 50%;
+  box-sizing: border-box;
+
+  --color-light: #faf9f7;
+  --color-light-accent: #b6879b;
+
+  --color-main-brand: #f49890;
+
+  --color-dark: #353651;
+  --color-dark-accent: #8d4b3d;
+
+  --color-checklist: #7ea863;
+  --color-danger: #f44336;
+
+  @media only screen and (max-width: $bp-bigger) {
+    font-size: 45%;
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 40%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 35%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 30%;
+  }
+}
+
+* {
+  font-family: "REM", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--color-dark);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.app {
+  background-color: var(--color-light);
+  // height: 100;
+}
+
+.loading__mode {
+  position: absolute;
+  z-index: 999;
+  grid-area: 1 / 1 / -1 / -1;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // overflow: hidden;
+
+  @media only screen and (max-width: $bp-small-medium) {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &--1 {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-small-medium) {
+      height: 50%;
+    }
+  }
+
+  /* From https://css.glass */
+  background: rgba(42, 42, 42, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+}
